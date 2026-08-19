@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TODO: 公開ドメイン確定後、下記の loc を実際のURLに差し替えてください。
+  現在はTOPページに全セクションを統合した1ページ構成のため、
+  エントリは1件のみです。/stay /price /setoda /access /faq を
+  独立したページに分割する場合は、それぞれ <url> を追加してください。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://TODO-your-domain.example/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

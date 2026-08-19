@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">事業者概要｜ゲストハウス panipani 生口島</title>
+<meta name="description" content="ゲストハウス panipani 生口島の事業者概要です。">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#1B1F1A; --paper:#FCFBF5; --paper-warm:#F6F2E6;
+    --lemon:#F2C230; --lemon-deep:#D9A421; --sea:#2F5D52; --sea-deep:#1F4139; --line:#E6E1D2;
+  }
+  body{ background:var(--paper); color:var(--ink); font-family:'Noto Sans JP','Inter',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-family:'Fraunces','Shippori Mincho',serif; }
+  h1{ font-family:'Fraunces','Shippori Mincho',serif; }
+  .lemon-mark{
+    width:1.1rem;height:1.1rem;border-radius:9999px;flex:none;
+    background:
+      radial-gradient(circle at center, transparent 0 22%, var(--lemon) 23% 26%, transparent 27% 100%),
+      conic-gradient(from 0deg, var(--lemon) 0 40deg, transparent 0 45deg, var(--lemon) 0 85deg, transparent 0 90deg,
+        var(--lemon) 0 130deg, transparent 0 135deg, var(--lemon) 0 175deg, transparent 0 180deg,
+        var(--lemon) 0 220deg, transparent 0 225deg, var(--lemon) 0 265deg, transparent 0 270deg,
+        var(--lemon) 0 310deg, transparent 0 315deg, var(--lemon) 0 355deg, transparent 0 360deg);
+    border:1.5px solid var(--lemon-deep);
+  }
+  .row{ display:grid; grid-template-columns: 1fr; gap:.35rem; padding:1.25rem 0; border-bottom:1px solid var(--line); }
+  @media (min-width:640px){ .row{ grid-template-columns: 200px 1fr; gap:1.5rem; } }
+  .row dt{ font-size:.8rem; letter-spacing:.03em; color:rgba(27,31,26,.5); }
+  .row dd{ font-size:.95rem; line-height:1.8; color:var(--ink); }
+  .lang-toggle{ display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:2px; font-size:.72rem; letter-spacing:.05em; background:#fff; }
+  .lang-btn{ padding:.35rem .7rem; border-radius:999px; font-weight:500; color:var(--ink); opacity:.45; transition:all .2s ease; cursor:pointer; border:none; background:transparent; }
+  .lang-btn.active{ background:var(--ink); color:var(--paper); opacity:1; }
+  [data-lang-block="en"]{ display:none; }
+</style>
+</head>
+<body class="antialiased">
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
+    <a href="index.html" class="font-display text-lg" style="color:var(--ink)">panipani</a>
+    <div class="flex items-center gap-4">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="ja">JP</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html" class="text-sm hover:opacity-60" data-lang-block="ja">← トップに戻る</a>
+      <a href="index.html" class="text-sm hover:opacity-60" data-lang-block="en">← Back to top</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <p class="inline-flex items-center gap-2 text-xs tracking-widest uppercase mb-4" style="color:var(--sea-deep)">
+      <span class="lemon-mark"></span>Company Profile
+    </p>
+
+    <div data-lang-block="ja">
+      <h1 class="text-3xl md:text-4xl mb-10">事業者概要</h1>
+      <dl>
+        <div class="row"><dt>屋号</dt><dd>ゲストハウス panipani 生口島</dd></div>
+        <div class="row"><dt>代表</dt><dd>神原瑠翔</dd></div>
+        <div class="row"><dt>所在地</dt><dd>〒722-2411<br>広島県尾道市瀬戸田町瀬戸田104-1</dd></div>
+        <div class="row"><dt>TEL</dt><dd>090-1336-2873</dd></div>
+        <div class="row"><dt>事業内容</dt><dd>宿泊施設の運営・地域観光交流事業</dd></div>
+      </dl>
+      <a href="index.html" class="inline-block mt-10 text-sm hover:opacity-60">← panipani トップページに戻る</a>
+    </div>
+
+    <div data-lang-block="en">
+      <h1 class="text-3xl md:text-4xl mb-10">Company Profile</h1>
+      <dl>
+        <div class="row"><dt>Trade Name</dt><dd>Guesthouse panipani Ikuchijima</dd></div>
+        <div class="row"><dt>Representative</dt><dd>Ryusho Kanhara</dd></div>
+        <div class="row"><dt>Address</dt><dd>722-2411<br>104-1 Setoda, Setoda-cho, Onomichi-shi, Hiroshima, Japan</dd></div>
+        <div class="row"><dt>TEL</dt><dd>+81 90-1336-2873</dd></div>
+        <div class="row"><dt>Business Description</dt><dd>Operation of lodging facilities and regional tourism exchange activities</dd></div>
+      </dl>
+      <a href="index.html" class="inline-block mt-10 text-sm hover:opacity-60">← Back to panipani home</a>
+    </div>
+  </main>
+
+<script>
+(function(){
+  let lang = 'ja';
+  const titles = {
+    ja: '事業者概要｜ゲストハウス panipani 生口島',
+    en: 'Company Profile | Guesthouse panipani Ikuchijima'
+  };
+  function apply(){
+    document.getElementById('html-root').setAttribute('lang', lang);
+    document.getElementById('page-title').textContent = titles[lang];
+    document.querySelectorAll('[data-lang-block]').forEach(el=>{
+      el.style.display = (el.getAttribute('data-lang-block') === lang) ? 'block' : 'none';
+    });
+    document.querySelectorAll('.lang-btn').forEach(b=> b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+  }
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{ lang = b.getAttribute('data-lang'); apply(); });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>

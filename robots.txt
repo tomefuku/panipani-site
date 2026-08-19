@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: 公開ドメイン確定後、下記URLを実際のドメインに差し替えてください
+Sitemap: https://TODO-your-domain.example/sitemap.xml
