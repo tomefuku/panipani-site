@@ -11,11 +11,11 @@
 <title id="seo-title">ゲストハウス panipani｜尾道市・生口島 瀬戸田 しまなみ海道のドミトリー宿泊</title>
 <meta id="seo-description" name="description" content="広島県尾道市・生口島(瀬戸田)にあるゲストハウス panipani。しまなみ海道サイクリングの拠点として、1泊2,500円〜のドミトリーに宿泊できます。瀬戸田観光にも便利な尾道の宿です。">
 <meta name="keywords" content="生口島,瀬戸田,しまなみ海道,尾道,ゲストハウス,宿泊,ドミトリー,サイクリング">
-<!-- TODO: 公開URL確定後、canonical / og:url / hreflangを正式なURLに更新してください -->
-<link rel="canonical" href="TODO:公開URL（例 https://panipani.jp/）">
-<link rel="alternate" hreflang="ja" href="TODO:公開URL?lang=ja">
-<link rel="alternate" hreflang="en" href="TODO:公開URL?lang=en">
-<link rel="alternate" hreflang="x-default" href="TODO:公開URL">
+<!-- canonical / og:url / hreflang -->
+<link rel="canonical" href="https://panipani.info/">
+<link rel="alternate" hreflang="ja" href="https://panipani.info/?lang=ja">
+<link rel="alternate" hreflang="en" href="https://panipani.info/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://panipani.info/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta id="seo-og-locale" property="og:locale" content="ja_JP">
@@ -23,7 +23,7 @@
 <meta id="seo-og-title" property="og:title" content="ゲストハウス panipani｜尾道市・生口島 瀬戸田 しまなみ海道のドミトリー宿泊">
 <meta id="seo-og-description" property="og:description" content="広島県尾道市・生口島(瀬戸田)にあるゲストハウス panipani。しまなみ海道サイクリングの拠点として、1泊2,500円〜のドミトリーに宿泊できます。瀬戸田観光にも便利な尾道の宿です。">
 <meta property="og:image" content="TODO:公開用OGP画像のURL(1200x630推奨)">
-<meta property="og:url" content="TODO:公開URL">
+<meta property="og:url" content="https://panipani.info/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23F2C230%22/></svg>">
 
@@ -44,8 +44,7 @@
   },
   "telephone": "090-1336-2873",
   "priceRange": "¥2,500〜",
-  "url": "TODO:公開URL",
-  "image": "TODO:公開用写真URL"
+  "url": "https://panipani.info/"
 }
 </script>
 
@@ -101,9 +100,9 @@
       { ja: "前日以降", en: "From the day before", rate: 100 }
     ],
     facilities: {
-      wifi: true, shower: true, towel: true, slippers: true, amenities: true,
+      wifi: true, shower: true, towel: true, amenities: true,
       parkingSpaces: 2, bicycleStorage: "indoor", luggageStorage: true,
-      washer: true, dryer: false, cashless: true, // 現地はPayPay(追加分のみ)
+      washer: true,
       outlet: true, // ベッドごとにあり
       pump: true, // 空気入れ: 無料であり
     },
@@ -288,6 +287,8 @@
   }
   .lang-btn.active{ background:var(--ink); color:var(--paper); opacity:1; }
 
+  .about-lead{ color:rgba(27,31,26,.88); font-weight:400; line-height:1.9; }
+
   ::selection{ background:var(--lemon); color:var(--ink); }
 </style>
 </head>
@@ -391,13 +392,13 @@
 ============================================================= -->
 <section id="about" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
   <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-    <div class="order-2 md:order-1 aspect-[4/5] rounded-2xl photo-placeholder" data-label="TODO: 宿の外観 or 共用スペース写真"></div>
+    <div class="order-2 md:order-1 aspect-[4/5] rounded-2xl photo-placeholder"></div>
     <div class="order-1 md:order-2">
       <p class="eyebrow mb-4"><span class="lemon-mark"></span>About</p>
       <h2 class="font-display italic text-3xl md:text-5xl leading-tight" data-i18n-html="about_title">Welcome to<br>panipani.</h2>
-      <p class="mt-6 text-[15px] leading-8 text-black/70 max-w-md" data-i18n="about_p1">panipaniは、瀬戸内・生口島の瀬戸田にあるドミトリー形式のゲストハウスです。「泊まるためだけの場所」ではなく、瀬戸田の海やレモン畑、自転車での島めぐりを楽しむための拠点として、気軽に立ち寄れる宿を目指しています。</p>
-      <p class="mt-4 text-[15px] leading-8 text-black/70 max-w-md" data-i18n="about_p2">しまなみ海道のサイクリング旅の途中にも、瀬戸内の島時間をゆっくり過ごしたい旅にも。</p>
-      <p class="mt-4 text-[15px] leading-8 text-black/70 max-w-md" data-i18n="about_p3">1泊2,500円〜というリーズナブルさだけでなく、清潔で心地よい空間、島時間を感じられる雰囲気を大切にしています。「安いから」ではなく「この雰囲気が好きだから」選んでもらえる宿を目指しています。</p>
+      <p class="mt-6 text-[15px] about-lead max-w-md" data-i18n="about_p1">panipaniは、瀬戸内・生口島の瀬戸田にあるドミトリー形式のゲストハウスです。「泊まるためだけの場所」ではなく、瀬戸田の海やレモン畑、自転車での島めぐりを楽しむための拠点として、気軽に立ち寄れる宿を目指しています。</p>
+      <p class="mt-4 text-[15px] about-lead max-w-md" data-i18n="about_p2">しまなみ海道のサイクリング旅の途中にも、瀬戸内の島時間をゆっくり過ごしたい旅にも。</p>
+      <p class="mt-4 text-[15px] about-lead max-w-md" data-i18n="about_p3">1泊2,500円〜というリーズナブルさだけでなく、清潔で心地よい空間、島時間を感じられる雰囲気を大切にしています。「安いから」ではなく「この雰囲気が好きだから」選んでもらえる宿を目指しています。</p>
     </div>
   </div>
 </section>
@@ -412,7 +413,7 @@
     <p class="text-[15px] text-black/70 max-w-lg mb-12" data-i18n="stay_sub">少人数で泊まれる、アットホームなドミトリー。旅の荷物を下ろして、島時間に切り替える場所。</p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="aspect-[4/3] rounded-2xl photo-placeholder lg:col-span-2 lg:row-span-2 lg:aspect-auto" data-label="TODO: ドミトリー室内写真"></div>
+      <div class="aspect-[4/3] rounded-2xl photo-placeholder lg:col-span-2 lg:row-span-2 lg:aspect-auto"></div>
 
       <div class="card p-6">
         <h3 class="font-display text-lg mb-2" data-i18n="stay_card1_title">ドミトリー</h3>
@@ -420,19 +421,18 @@
       </div>
       <div class="card p-6">
         <h3 class="font-display text-lg mb-2" data-i18n="stay_card2_title">ベッドスペース</h3>
-        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card2_body">1台ずつ独立した2段ベッド。旅の荷物も置きやすい設計を予定。</p>
+        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card2_body">1台ずつ独立した2段ベッド。旅の荷物も置きやすい設計です。</p>
       </div>
       <div class="card p-6">
         <h3 class="font-display text-lg mb-2" data-i18n="stay_card3_title">共用スペース</h3>
-        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card3_body">他の旅行者と交流できる共用スペースを予定しています。</p>
+        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card3_body">他の旅行者と交流できる共用スペースがあります。</p>
       </div>
       <div class="card p-6">
         <h3 class="font-display text-lg mb-2" data-i18n="stay_card4_title">シャワー・トイレ</h3>
-        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card4_body">共用のシャワー・トイレを設置予定です。</p>
+        <p class="text-sm text-black/60 leading-relaxed" data-i18n="stay_card4_body">共用のシャワー・トイレをご利用いただけます。</p>
       </div>
     </div>
 
-    <p class="text-xs text-black/40 mt-6" data-i18n="stay_note">※ 設備の詳細はFACILITIESセクションをご覧ください。キッチンなど未確認の項目は確認が取れ次第追加します。</p>
     <a href="javascript:void(0)" data-book class="btn-primary mt-8" data-i18n="cta_book">空室を確認する</a>
   </div>
 </section>
@@ -443,14 +443,13 @@
 <section id="facilities" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
   <p class="eyebrow mb-4"><span class="lemon-mark"></span>Facilities</p>
   <h2 class="font-display italic text-3xl md:text-5xl mb-4" data-i18n="facilities_title">設備</h2>
-  <p class="text-[15px] text-black/70 max-w-lg mb-12" data-i18n="facilities_sub">確認できている設備のみアイコンで掲載しています。その他は確認が取れ次第、随時追加します。</p>
+  <p class="text-[15px] text-black/70 max-w-lg mb-12" data-i18n="facilities_sub">館内でご利用いただける設備です。</p>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="facilities-grid"></div>
 
   <!-- その他: 汐風さん(cycle-gh.com)と同様、写真なしのテキスト形式で列記 -->
   <p class="text-sm text-black/60 leading-loose mt-8" id="facilities-other"></p>
 
-  <p class="text-xs text-black/40 mt-6" data-i18n="facilities_note">※ 薄く表示している項目は確認中です。確認が取れ次第、はっきりした表示に切り替えます。</p>
 </section>
 
 <!-- ============================================================
@@ -459,7 +458,7 @@
 <section id="price" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
   <p class="eyebrow mb-4"><span class="lemon-mark"></span>Price</p>
   <h2 class="font-display italic text-3xl md:text-5xl mb-4" data-i18n="price_title">気軽に、島旅を。</h2>
-  <p class="text-[15px] text-black/70 max-w-lg mb-12" data-i18n="price_sub">価格は確定情報ではありません。予約システム確定後に正式な料金へ更新してください。</p>
+  <p class="text-[15px] text-black/70 max-w-lg mb-12" data-i18n="price_sub">1泊2,500円〜。サイクリストにも、ひとり旅にもうれしい価格です。</p>
 
   <div class="card p-8 md:p-10 max-w-md" style="background:var(--ink); color:var(--paper); border:none;">
     <p class="text-sm text-white/60 tracking-wide" id="price-label"></p>
@@ -514,7 +513,6 @@
     <div class="flex flex-wrap gap-2 mb-10" id="setoda-tags"></div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="setoda-gallery"></div>
-    <p class="text-xs text-white/40 mt-6" data-i18n="setoda_note">※ 具体的な店舗名・営業時間・料金は事実確認が取れ次第、TODOを解消して掲載してください。</p>
   </div>
 </section>
 
@@ -563,7 +561,7 @@
       <div>
         <h3 class="font-display text-lg mb-1" data-i18n="access_address_title">住所</h3>
         <p class="text-sm text-black/60" id="access-postal"></p>
-        <p class="text-sm text-black/60" id="access-address">TODO</p>
+        <p class="text-sm text-black/60" id="access-address">広島県尾道市瀬戸田町瀬戸田104-1</p>
         <p class="text-xs text-black/40 mt-1" id="access-address-note"></p>
       </div>
       <a href="javascript:void(0)" data-book class="btn-primary mt-2" data-i18n="cta_book">空室を確認する</a>
@@ -607,7 +605,6 @@
         </div>
       </div>
     </div>
-    <p class="text-xs text-black/40 mt-4" data-i18n="access_nearby_note">※ panipaniからの正確な距離・徒歩時間はTODO: 情報確認が必要です。</p>
   </div>
 </section>
 
@@ -629,7 +626,7 @@
   <p class="eyebrow mb-4"><span class="lemon-mark"></span>News</p>
   <h2 class="font-display italic text-3xl md:text-5xl mb-8" data-i18n="news_title">お知らせ</h2>
   <div class="card p-8 text-center text-sm text-black/50" data-i18n="news_body">
-    現在、お知らせはありません。オープン日程や料金変更、瀬戸田の季節情報などを今後こちらに掲載していく予定です。
+    現在、お知らせはございません。料金改定や瀬戸田の季節情報などは、随時こちらでお知らせいたします。
   </div>
 </section>
 
@@ -656,18 +653,16 @@
     <h2 class="font-display italic text-3xl md:text-5xl mb-8">Book your stay at panipani</h2>
     <a href="javascript:void(0)" data-book class="btn-primary" style="background:var(--lemon); color:var(--ink)" data-i18n="cta_book">空室を確認する</a>
     <p class="text-sm text-white/70 mt-5" data-i18n="reservation_body">ご予約は公式サイトから、予約システム「Beds24」へ直接つながります。</p>
-    <p class="text-xs text-white/40 mt-2" data-i18n="reservation_note">※ Beds24の予約URL発行後、このボタンから直接予約ページへ遷移します（現在準備中）</p>
   </div>
 </section>
 
 <!-- ============================================================
      INSTAGRAM
 ============================================================= -->
-<section class="max-w-6xl mx-auto px-5 md:px-8 pb-20 md:pb-28 text-center">
+<section id="instagram-section" class="max-w-6xl mx-auto px-5 md:px-8 pb-20 md:pb-28 text-center">
   <p class="eyebrow justify-center mb-4"><span class="lemon-mark"></span>Instagram</p>
   <h2 class="font-display italic text-2xl md:text-4xl mb-4" id="instagram-heading">Follow our journey</h2>
   <a href="javascript:void(0)" data-instagram id="instagram-cta" class="btn-ghost inline-flex">Instagram Coming Soon</a>
-  <p class="text-xs text-black/40 mt-4" data-i18n="instagram_body">現在準備中です。アカウント開設後、このセクションからフォローできるようになります。</p>
 </section>
 
 <!-- ============================================================
@@ -688,8 +683,8 @@
   <div class="max-w-6xl mx-auto px-5 md:px-8 py-14 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
     <div>
       <p class="font-display text-xl mb-3">panipani</p>
-      <p class="text-sm text-black/50" id="footer-address">TODO</p>
-      <p class="text-sm text-black/50" id="footer-phone">TODO</p>
+      <p class="text-sm text-black/50" id="footer-address">〒722-2411 広島県尾道市瀬戸田町瀬戸田104-1</p>
+      <p class="text-sm text-black/50" id="footer-phone">090-1336-2873</p>
     </div>
     <div class="text-sm space-y-2 text-black/60">
       <p class="text-black/40 text-xs uppercase tracking-wide mb-2">Site</p>
@@ -742,16 +737,13 @@ window.FACILITY_ICONS = {
   wifi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5.5 12.5a11 11 0 0 1 13 0"/><path d="M9 16.5a6 6 0 0 1 6 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>',
   shower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a4 4 0 0 1 4-4h2"/><path d="M18 8a4 4 0 0 0-4-4"/><path d="M6 10h12"/><path d="M8 14v1M12 14v1M16 14v1M8 18v1M12 18v1M16 18v1"/></svg>',
   towel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 10v10"/></svg>',
-  slippers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c0-2 2-3 4-3h2c2 0 3 1 3 3s-1 3-3 3H6c-2 0-3-1-3-3z"/><path d="M12 15c0-2 2-3 4-3h2c2 0 3 1 3 3s-1 3-3 3h-2c-2 0-3-1-3-3z"/><circle cx="7" cy="12.3" r=".6" fill="currentColor" stroke="none"/><circle cx="16" cy="12.3" r=".6" fill="currentColor" stroke="none"/></svg>',
   pump: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="4" height="8" rx="1"/><path d="M7 11v3"/><path d="M4 17h6l-1 3H5z"/><path d="M9 13h9l3 3"/></svg>',
   amenity: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3l2 2v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V7l2-2z"/><path d="M8 12h8"/></svg>',
   outlet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M10 10v2M14 10v2M12 14v2"/></svg>',
   luggage: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M4 12h16"/></svg>',
   bicycle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3.5"/><circle cx="18" cy="17" r="3.5"/><path d="M6 17l4-9h4l3 5"/><path d="M10 8h3"/><path d="M14 13h4"/></svg>',
   parking: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 17V7h3.5a3 3 0 0 1 0 6H9"/></svg>',
-  washer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M9.3 13a2.9 2.9 0 0 0 4.3 2.5"/><circle cx="7" cy="6" r=".8" fill="currentColor" stroke="none"/><circle cx="10" cy="6" r=".8" fill="currentColor" stroke="none"/></svg>',
-  dryer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M10 11.3c1-1 3-1 4 0s1 3.2 0 4.2"/><circle cx="7" cy="6" r=".8" fill="currentColor" stroke="none"/><circle cx="10" cy="6" r=".8" fill="currentColor" stroke="none"/></svg>',
-  cashless: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>'
+  washer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M9.3 13a2.9 2.9 0 0 0 4.3 2.5"/><circle cx="7" cy="6" r=".8" fill="currentColor" stroke="none"/><circle cx="10" cy="6" r=".8" fill="currentColor" stroke="none"/></svg>'
 };
 window.I18N = {
   ja: {
@@ -771,26 +763,23 @@ window.I18N = {
     about_p3: "1泊2,500円〜というリーズナブルさだけでなく、清潔で心地よい空間、島時間を感じられる雰囲気を大切にしています。「安いから」ではなく「この雰囲気が好きだから」選んでもらえる宿を目指しています。",
     stay_sub: "少人数で泊まれる、アットホームなドミトリー。旅の荷物を下ろして、島時間に切り替える場所。",
     stay_card1_title: "ドミトリー", stay_card1_body: "2段ベッドを使用した、少人数制のドミトリールーム。",
-    stay_card2_title: "ベッドスペース", stay_card2_body: "1台ずつ独立した2段ベッド。旅の荷物も置きやすい設計を予定。",
-    stay_card3_title: "共用スペース", stay_card3_body: "他の旅行者と交流できる共用スペースを予定しています。",
-    stay_card4_title: "シャワー・トイレ", stay_card4_body: "共用のシャワー・トイレを設置予定です。",
-    stay_note: "※ 設備の詳細はFACILITIESセクションをご覧ください。キッチンなど未確認の項目は確認が取れ次第追加します。",
+    stay_card2_title: "ベッドスペース", stay_card2_body: "1台ずつ独立した2段ベッド。旅の荷物も置きやすい設計です。",
+    stay_card3_title: "共用スペース", stay_card3_body: "他の旅行者と交流できる共用スペースがあります。",
+    stay_card4_title: "シャワー・トイレ", stay_card4_body: "共用のシャワー・トイレをご利用いただけます。",
     facilities_title: "設備",
-    facilities_sub: "確認できている設備のみアイコンで掲載しています。その他は確認が取れ次第、随時追加します。",
-    facilities_note: "※ 薄く表示している項目は確認中です。確認が取れ次第、はっきりした表示に切り替えます。",
+    facilities_sub: "館内でご利用いただける設備です。",
     facilities_other_label: "その他",
-    facilities_other_items: "湯沸かし器あり、Wi-Fi無料、館内禁煙（屋外喫煙スペースあり）、ドライヤーあり（無料）、自転車空気入れあり（無料）",
+    facilities_other_items: "湯沸かし器あり、Wi-Fi無料、館内禁煙、ドライヤーあり（無料）、自転車空気入れあり（無料）",
     facilities_confirmed: "ドミトリー", facilities_confirmed_sub: "2段ベッド",
     facilities_pending: "確認中",
     price_title: "気軽に、島旅を。",
-    price_sub: "価格は確定情報ではありません。予約システム確定後に正式な料金へ更新してください。",
+    price_sub: "1泊2,500円〜。サイクリストにも、ひとり旅にもうれしい価格です。",
     price_label: "ドミトリー 1泊",
     price_note: "実際の料金は宿泊日・条件等により変動する場合があります。最新の料金は予約画面でご確認ください。",
     who_title: "こんな旅に、panipani。",
     who_1: "しまなみ海道を走る旅。", who_2: "ひとりで気軽に島旅。",
     who_3: "瀬戸内の島を楽しむ。", who_4: "宿泊費を抑えて旅を楽しむ。",
     setoda_sub: "生口島・瀬戸田は、レモンと海とサイクリングの島。panipaniはその玄関口です。",
-    setoda_note: "※ 具体的な店舗名・営業時間・料金は事実確認が取れ次第、TODOを解消して掲載してください。",
     setoda_tags: ["食べる","歩く","自転車","海","レモン","カフェ","観光"],
     gallery_labels: ["客室","外観","瀬戸田の海","レモン","サイクリング","ベッド","街並み","周辺観光"],
     access_other_title: "車・自転車・公共交通",
@@ -798,28 +787,21 @@ window.I18N = {
     access_address_title: "住所",
     access_address_note: "",
     access_nearby_title: "近くにこんな場所があります",
-    access_nearby_note: "※ panipaniからの正確な距離・徒歩時間はTODO: 情報確認が必要です。",
     news_title: "お知らせ",
-    news_body: "現在、お知らせはありません。オープン日程や料金変更、瀬戸田の季節情報などを今後こちらに掲載していく予定です。",
+    news_body: "現在、お知らせはございません。料金改定や瀬戸田の季節情報などは、随時こちらでお知らせいたします。",
     faq_title: "よくある質問",
     reservation_kicker: "瀬戸田で、島時間を。",
     reservation_body: "ご予約は公式サイトから、予約システム「Beds24」へ直接つながります。",
-    reservation_note: "※ Beds24の予約URL発行後、このボタンから直接予約ページへ遷移します（現在準備中）",
     instagram_heading_ready: "panipaniの日常を見る",
-    instagram_heading_pending: "Follow our journey",
     instagram_cta_ready: "@panipani をフォロー",
-    instagram_cta_pending: "Instagram Coming Soon",
-    instagram_body: "現在準備中です。アカウント開設後、このセクションからフォローできるようになります。",
     contact_title: "お問い合わせ",
     contact_heading: "ご不明な点はお気軽に",
     contact_body: "ご予約前のご質問やご相談は、下記フォームまたはお電話・メールにてお気軽にお問い合わせください。",
     contact_cta: "お問い合わせフォーム",
-    contact_cta_pending: "お問い合わせフォーム（準備中）",
     footer_privacy: "プライバシーポリシー",
     footer_terms: "利用規約",
     footer_cancel: "キャンセルポリシー",
     footer_law: "特定商取引法に基づく表記",
-    todo: "TODO: 情報確認が必要です。",
     faqCategories: [
       { title: "予約について", items: [
         ["予約はどこからできますか？", "公式サイトの「空室を確認する」ボタンから、予約システム「Beds24」の予約ページへ進んでいただけます。"],
@@ -828,6 +810,7 @@ window.I18N = {
         ["キャンセルはできますか？", null, "cancellation"],
         ["予約の変更はできますか？", "基本的には、ご予約いただいたサイト上で日程の変更をお願いしております。予約サイト上で変更ができない場合は、お問い合わせフォームよりご連絡ください。"],
         ["当日予約はできますか？", "清掃やベッドメイキングの準備がございますため、2日前までのご予約をお願いしております。"],
+        ["一棟貸切はできますか？", "可能です。ご希望の場合は、直接お問い合わせください。"],
       ]},
       { title: "宿泊について", items: [
         ["チェックインは何時からですか？", null, "checkin"],
@@ -838,7 +821,7 @@ window.I18N = {
         ["男女別のお部屋ですか？", null, "gender"],
         ["一人での利用はできますか？", null, "solo"],
         ["連泊の場合、清掃はどうなりますか？", "16時までは清掃スタッフが施設内におりますので、あらかじめご了承ください。"],
-        ["連泊中、シーツの交換はできますか？", "シーツの交換をご希望の場合は、ベッドに備え付けの交換カードを、見えやすいよう布団の上に置いてください。", null, "sheet_card"],
+        ["連泊中、シーツの交換はできますか？", "シーツの交換をご希望の場合は、ベッドに備え付けの交換カードを、見えやすいよう布団の上に置いてください。"],
       ]},
       { title: "設備について", items: [
         ["Wi-Fiはありますか？", "はい、Wi-Fiをご利用いただけます。"],
@@ -847,7 +830,7 @@ window.I18N = {
         ["アメニティはありますか？", "ご用意がございます。現地での販売となります。"],
         ["ベッドにコンセントはありますか？", null, "outlet"],
         ["荷物を預けられますか？", "はい、荷物預かりをご利用いただけます。ただし16時までは清掃スタッフが施設内におりますので、あらかじめご了承ください。"],
-        ["洗濯機はありますか？", "はい、洗濯機をご利用いただけます（有料：1回300円）。なお、乾燥機はございません。"],
+        ["洗濯機はありますか？", "はい、洗濯機をご利用いただけます（有料：1回300円）。"],
       ]},
       { title: "サイクリストの方へ", items: [
         ["自転車を置く場所はありますか？", "はい、室内の自転車置き場をご利用いただけます。"],
@@ -887,26 +870,23 @@ window.I18N = {
     about_p3: "Beyond the value of a room from ¥2,500 a night, we care about keeping the space clean, comfortable, and true to that island-time feeling. We'd like guests to choose panipani for how it feels, not just for the price.",
     stay_sub: "A small, homely dormitory. A place to put your bags down and shift into island time.",
     stay_card1_title: "Dormitory", stay_card1_body: "A small-capacity dormitory room with bunk beds.",
-    stay_card2_title: "Bed Space", stay_card2_body: "Individual bunk beds, planned with easy space for your travel bags.",
-    stay_card3_title: "Common Area", stay_card3_body: "A shared space planned for meeting other travelers.",
-    stay_card4_title: "Shower & Toilet", stay_card4_body: "Shared shower and toilet facilities are planned.",
-    stay_note: "※ See the Facilities section below for details. Items like a kitchen are still being confirmed and will be added once finalized.",
+    stay_card2_title: "Bed Space", stay_card2_body: "Individual bunk beds, with easy space for your travel bags.",
+    stay_card3_title: "Common Area", stay_card3_body: "A shared space for meeting other travelers.",
+    stay_card4_title: "Shower & Toilet", stay_card4_body: "Shared shower and toilet facilities are available.",
     facilities_title: "Facilities",
-    facilities_sub: "Only confirmed facilities are shown here with icons. Others will be added as soon as they're confirmed.",
-    facilities_note: "※ Faded items are still being confirmed and will be updated once we know whether they're available.",
+    facilities_sub: "Facilities available on-site are shown here.",
     facilities_other_label: "Also available",
-    facilities_other_items: "Electric kettle, free Wi-Fi, no smoking indoors (outdoor smoking area available), free hair dryer, free bicycle pump",
+    facilities_other_items: "Electric kettle, free Wi-Fi, no smoking indoors, free hair dryer, free bicycle pump",
     facilities_confirmed: "Dormitory", facilities_confirmed_sub: "Bunk bed",
     facilities_pending: "Confirming",
     price_title: "An easy way into island life.",
-    price_sub: "This price is not yet finalized. It will be updated once the booking system is confirmed.",
+    price_sub: "From ¥2,500 per night — an easy price for cyclists and solo travelers alike.",
     price_label: "Dormitory, per night",
     price_note: "Actual rates may vary by date and conditions. Please check the booking screen for the current price.",
     who_title: "Who travels here?",
     who_1: "Riding the Shimanami Kaido.", who_2: "Easy island travel, solo.",
     who_3: "Exploring a Setouchi island.", who_4: "Traveling more, spending less.",
     setoda_sub: "Ikuchijima and Setoda are an island of lemons, sea, and cycling — panipani is your gateway to them.",
-    setoda_note: "※ Specific shop names, hours, and prices will be added once confirmed.",
     setoda_tags: ["Eat","Walk","Cycle","Sea","Lemons","Cafe","Sightseeing"],
     gallery_labels: ["Room","Exterior","Setoda Sea","Lemons","Cycling","Beds","Townscape","Around the Island"],
     access_other_title: "Car, Bicycle & Public Transit",
@@ -914,28 +894,21 @@ window.I18N = {
     access_address_title: "Address",
     access_address_note: "(shown in Japanese for maps and taxis)",
     access_nearby_title: "Nearby",
-    access_nearby_note: "※ Exact walking distance from panipani is still being confirmed.",
     news_title: "News",
-    news_body: "There's no news yet. Opening dates, rate changes, and seasonal Setoda updates will be posted here.",
+    news_body: "There's no news at the moment. Rate updates and seasonal Setoda information will be posted here.",
     faq_title: "Frequently Asked Questions",
     reservation_kicker: "Stay slow. Feel Setouchi.",
     reservation_body: "Booking here connects you directly to our reservation system, Beds24.",
-    reservation_note: "※ Once the Beds24 URL is issued, this button will link directly to booking (coming soon).",
     instagram_heading_ready: "See daily life at panipani",
-    instagram_heading_pending: "Follow our journey",
     instagram_cta_ready: "Follow @panipani",
-    instagram_cta_pending: "Instagram Coming Soon",
-    instagram_body: "Instagram is coming soon. Once the account is live, you'll be able to follow us right from here.",
     contact_title: "Contact",
     contact_heading: "Have a question?",
     contact_body: "Feel free to reach out before booking with any questions via the form below, or by phone or email.",
     contact_cta: "Contact Form",
-    contact_cta_pending: "Contact Form (Coming Soon)",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Use",
     footer_cancel: "Cancellation Policy",
     footer_law: "Legal Notice",
-    todo: "TODO: To be confirmed.",
     faqCategories: [
       { title: "Reservation", items: [
         ["How do I make a reservation?", "Tap \u201cCheck Availability\u201d on the official site to go to our booking page on Beds24."],
@@ -944,6 +917,7 @@ window.I18N = {
         ["Can I cancel my reservation?", null, "cancellation"],
         ["Can I change my reservation?", "Please make date changes through the site where you originally booked. If you are unable to change it there, please contact us via our inquiry form."],
         ["Can I book for today?", "Since we need time for cleaning and bed-making, we ask that you book at least 2 days in advance."],
+        ["Can I book the whole guesthouse exclusively?", "Yes, that's possible. Please contact us directly if you're interested."],
       ]},
       { title: "Stay", items: [
         ["What time is check-in?", null, "checkin"],
@@ -954,7 +928,7 @@ window.I18N = {
         ["Are rooms separated by gender?", null, "gender"],
         ["Can I stay alone?", null, "solo"],
         ["If I'm staying multiple nights, will housekeeping visit?", "Our cleaning staff may be on-site until 16:00, so please be aware of this during your stay."],
-        ["Can I get my sheets changed during a multi-night stay?", "If you'd like your sheets changed, please place the exchange card (found on your bed) somewhere visible on top of your bedding.", null, "sheet_card"],
+        ["Can I get my sheets changed during a multi-night stay?", "If you'd like your sheets changed, please place the exchange card (found on your bed) somewhere visible on top of your bedding."],
       ]},
       { title: "Facilities", items: [
         ["Is there Wi-Fi?", "Yes, Wi-Fi is available."],
@@ -963,7 +937,7 @@ window.I18N = {
         ["Are amenities provided?", "Yes, amenities are available for purchase on-site."],
         ["Are there outlets at each bed?", null, "outlet"],
         ["Can I store my luggage?", "Yes, luggage storage is available. Please note our cleaning staff may be on-site until 16:00."],
-        ["Is there a washing machine?", "Yes, a washing machine is available for 300 yen per use. Please note there is no dryer."],
+        ["Is there a washing machine?", "Yes, a washing machine is available for 300 yen per use."],
       ]},
       { title: "For Cyclists", items: [
         ["Is there a place to store my bicycle?", "Yes, indoor bicycle storage is available."],
@@ -1090,7 +1064,6 @@ window.I18N = {
         sub_ja: T.facilities_confirmed_sub, sub_en: T.facilities_confirmed_sub, img: null },
       { icon: FI.shower, ja:'シャワー', en:'Shower', status: F.shower ? 'yes' : 'pending', img: null },
       { icon: FI.towel, ja:'バスタオル無料貸出', en:'Free Bath Towel Rental', status: F.towel ? 'yes' : 'pending', img: null },
-      { icon: FI.slippers, ja:'スリッパ無料貸出', en:'Free Slipper Rental', status: F.slippers ? 'yes' : 'pending', img: null },
       { icon: FI.amenity, ja:'アメニティ', en:'Amenities', status: F.amenities ? 'yes' : 'pending',
         sub_ja: '現地販売', sub_en: 'sold on-site', img: null },
       { icon: FI.outlet, ja:'コンセント', en:'Outlet', status: F.outlet ? 'yes' : 'pending',
@@ -1101,9 +1074,6 @@ window.I18N = {
       { icon: FI.parking, ja:'駐車場', en:'Parking', status: F.parkingSpaces ? 'yes' : 'pending',
         sub_ja: `${F.parkingSpaces}台`, sub_en: `${F.parkingSpaces} spaces`, img: null },
       { icon: FI.washer, ja:'洗濯機', en:'Washer', status: F.washer ? 'yes' : 'pending', img: null },
-      { icon: FI.dryer, ja:'乾燥機', en:'Dryer', status: 'no', img: null },
-      { icon: FI.cashless, ja:'キャッシュレス', en:'Cashless', status: F.cashless ? 'yes' : 'pending',
-        sub_ja: 'PayPay(追加分)', sub_en: 'PayPay, extras only', img: null },
     ];
     items.forEach(it=>{
       const d = document.createElement('div');
@@ -1174,7 +1144,7 @@ window.I18N = {
     imgs.forEach((src, i)=>{
       const div = document.createElement('div');
       div.className = 'gallery-item aspect-square rounded-xl photo-placeholder';
-      div.setAttribute('data-label', (lang==='en'?'TODO: ':'TODO: ') + (T.gallery_labels[i]||''));
+      div.setAttribute('data-label', T.gallery_labels[i] || '');
       if(src){
         div.style.backgroundImage = `url(${src})`;
         div.style.backgroundSize = 'cover';
@@ -1188,29 +1158,28 @@ window.I18N = {
       galleryGrid.appendChild(div);
     });
 
-    // instagram
+    // instagram — アカウントが未設定の間は「準備中」文言を出さず、セクションごと非表示にする
+    const igSection = document.getElementById('instagram-section');
     const igCta = document.getElementById('instagram-cta');
     const igHeading = document.getElementById('instagram-heading');
     if(S.instagramUrl){
+      igSection.style.display = '';
       igCta.textContent = T.instagram_cta_ready;
       igHeading.textContent = T.instagram_heading_ready;
       igCta.style.opacity = '1'; igCta.style.pointerEvents = 'auto';
     } else {
-      igCta.textContent = T.instagram_cta_pending;
-      igHeading.textContent = T.instagram_heading_pending;
-      igCta.style.opacity = '.6'; igCta.style.pointerEvents = 'none';
+      igSection.style.display = 'none';
     }
 
-    // contact form (Formrun等)
+    // contact form (Formrun等) — フォームURL未設定の間はボタンを非表示にし、電話・メールのみ案内する
     const contactCta = document.getElementById('contact-form-cta');
     const contactAlt = document.getElementById('contact-alt');
     const contactReady = S.CONTACT_FORM_URL && S.CONTACT_FORM_URL !== 'TODO_CONTACT_FORM_URL';
     if(contactReady){
       contactCta.textContent = T.contact_cta;
-      contactCta.style.opacity = '1'; contactCta.style.pointerEvents = 'auto';
+      contactCta.style.display = '';
     } else {
-      contactCta.textContent = T.contact_cta_pending;
-      contactCta.style.opacity = '.6'; contactCta.style.pointerEvents = 'none';
+      contactCta.style.display = 'none';
     }
     contactAlt.textContent = lang === 'en'
       ? `TEL: ${S.phoneIntl} / MAIL: ${S.email}`
@@ -1227,8 +1196,8 @@ window.I18N = {
         ? `A dormitory bed starts from ¥${S.price.value.toLocaleString()} per night. ${T.price_note}`
         : `${T.price_label} ${fmtPrice('ja')}です。${T.price_note}`,
       payment: lang === 'en'
-        ? `No — payment is made by credit card at the time of booking (charged immediately). For the exact date your card is billed, please check with your card issuer. On-site, you can pay in cash or with PayPay for extras only (such as amenities). See the property information for details.`
-        : `いいえ。宿泊料金は、ご予約時にクレジットカードで即時決済されます。お客様の口座引き落としの日につきましては、ご契約のカード会社にお問い合わせください。現地ではアメニティ等の追加分のみ、現金もしくはPayPayでお支払いいただけます。詳しくは施設情報をご確認ください。`,
+        ? `Payment is made by credit card at the time of booking (charged immediately). For the exact date your card is billed, please check with your card issuer. If any extra charges arise on-site, you can pay by cash or PayPay.`
+        : `宿泊料金は、ご予約時にクレジットカードで即時決済されます。カードの引き落とし時期については、ご契約のカード会社へお問い合わせください。現地で追加料金が発生する場合は、現金またはPayPayでお支払いいただけます。`,
       cancellation: lang === 'en'
         ? `Cancellation fees apply as follows: ${cxl[0].en} — ${cxl[0].rate}%, ${cxl[1].en} — ${cxl[1].rate}%, ${cxl[2].en} — ${cxl[2].rate}%.`
         : `キャンセルの場合、以下の料金が発生いたします。チェックインの${cxl[0].ja}：${cxl[0].rate}％、${cxl[1].ja}：${cxl[1].rate}％、${cxl[2].ja}：${cxl[2].rate}％。`,
@@ -1283,7 +1252,7 @@ window.I18N = {
           const answer = (a === null && key && dynamicAnswers[key] !== undefined) ? dynamicAnswers[key] : a;
           const details = document.createElement('details');
           details.className = 'faq-item py-5';
-          const photoHtml = photo ? `<div class="aspect-video max-w-xs rounded-xl photo-placeholder mt-3" data-label="${lang==='en' ? 'TODO: reference photo' : 'TODO: 参考写真を追加'}"></div>` : '';
+          const photoHtml = photo ? `<div class="aspect-video max-w-xs rounded-xl photo-placeholder mt-3"></div>` : '';
           details.innerHTML = `
             <summary class="flex items-center justify-between gap-4">
               <span class="font-display text-base md:text-lg">${q}</span>
