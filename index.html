@@ -88,9 +88,18 @@
     // サイト内すべての「空室を確認する / Check Availability」ボタン(JA/EN共通)に反映されます。
     BEDS24_BOOKING_URL: "TODO_BEDS24_BOOKING_URL",
 
-    // お問い合わせフォーム(Formrun等)。URLが発行されたらここを書き換えるだけで
-    // ページ下部のお問い合わせボタンに反映されます。
-    CONTACT_FORM_URL: "TODO_CONTACT_FORM_URL",
+    // お問い合わせフォーム: Googleフォームをバックエンドに使用。
+    // 見た目はpanipaniオリジナルUI、送信先だけがGoogleフォームです。
+    // URLを変更する場合はこの1箇所だけでOK(末尾は必ず /formResponse)。
+    CONTACT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfsasfgn1DX8o8sdFMjJaYbOFYSwopBvM7gY5Z_0ZsHhIZnXw/formResponse",
+
+    // 上記フォームの各質問に対応するentry ID(Googleフォームの「事前入力したリンクを取得」で確認)
+    CONTACT_FORM_ENTRY_IDS: {
+      name: "entry.1173875270",
+      email: "entry.1186487394",
+      phone: "entry.1117801726",
+      message: "entry.1796957810"
+    },
 
     // Instagramは準備中。URLを設定すると自動的にリンクが有効になります。
     instagramUrl: "",
@@ -258,6 +267,25 @@
     font-size:1rem; letter-spacing:.03em;
   }
   .faq-cta-tile:hover{ background:var(--sea-deep); }
+
+  /* CONTACT — お問い合わせフォーム(Googleフォーム連携) */
+  .contact-input{
+    width:100%; font-family:'Noto Sans JP',sans-serif; font-size:.95rem;
+    color:var(--ink); background:var(--paper-warm);
+    border:1px solid var(--line); border-radius:.9rem;
+    padding:.85rem 1rem; line-height:1.6;
+    transition:border-color .2s ease;
+  }
+  .contact-input:focus{ outline:none; border-color:var(--sea); }
+  .contact-textarea{ resize:vertical; min-height:130px; }
+  .contact-badge{
+    display:inline-block; font-size:.65rem; letter-spacing:.05em;
+    color:#fff; background:var(--sea-deep);
+    padding:.15rem .5rem; border-radius:999px; margin-left:.5rem; vertical-align:1px;
+  }
+  .contact-error{ display:none; font-size:.75rem; color:#B3453D; margin-top:.5rem; }
+  [data-contact-field].is-invalid .contact-error{ display:block; }
+  [data-contact-field].is-invalid .contact-input{ border-color:#B3453D; }
 
   /* FACILITIES: 汐風さんを参考にした「写真+名前」カード形式(実写真がない項目はアイコンをプレースホルダーとして表示。
      実際の設備写真が揃い次第、.facility-photo に画像を差し込める構造) */
@@ -730,14 +758,61 @@
 </section>
 
 <!-- ============================================================
-     CONTACT — お問い合わせ(Formrun等のフォームサービスへのリンクを想定)
+     CONTACT — お問い合わせ(Googleフォームをバックエンドに使用。表示はpanipaniオリジナルUI)
 ============================================================= -->
-<section id="contact" class="max-w-3xl mx-auto px-5 md:px-8 pb-20 md:pb-28 text-center">
-  <p class="eyebrow justify-center mb-4"><span class="lemon-mark"></span><span data-i18n="contact_title">お問い合わせ</span></p>
-  <h2 class="font-display italic text-2xl md:text-4xl mb-4" data-i18n="contact_heading">ご不明な点はお気軽に</h2>
-  <p class="text-sm text-black/60 max-w-md mx-auto mb-8" data-i18n="contact_body">ご予約前のご質問やご相談は、下記フォームまたはお電話・メールにてお気軽にお問い合わせください。</p>
-  <a href="javascript:void(0)" id="contact-form-cta" class="btn-primary" data-i18n="contact_cta">お問い合わせフォーム</a>
-  <p class="text-xs text-black/40 mt-4" id="contact-alt"></p>
+<section id="contact" class="max-w-xl mx-auto px-5 md:px-8 pb-20 md:pb-28">
+  <div class="text-center">
+    <p class="eyebrow justify-center mb-4"><span class="lemon-mark"></span><span data-i18n="contact_title">お問い合わせ</span></p>
+    <h2 class="font-display italic text-2xl md:text-4xl mb-4" data-i18n="contact_heading">ご不明な点はお気軽に</h2>
+    <p class="text-sm text-black/60 max-w-md mx-auto mb-10" data-i18n="contact_body">ご予約前のご質問やご相談は、下記フォームまたはお電話・メールにてお気軽にお問い合わせください。</p>
+  </div>
+
+  <div class="card p-6 md:p-10">
+    <form id="contact-form" novalidate>
+
+      <div class="mb-6" data-contact-field="name">
+        <label for="contact-name" class="block text-sm mb-2">
+          <span data-i18n="contact_label_name">お名前</span><span class="contact-badge" data-i18n="contact_required">必須</span>
+        </label>
+        <input id="contact-name" type="text" class="contact-input" autocomplete="name">
+        <p class="contact-error" data-i18n="contact_error_name">お名前をご入力ください。</p>
+      </div>
+
+      <div class="mb-6" data-contact-field="email">
+        <label for="contact-email" class="block text-sm mb-2">
+          <span data-i18n="contact_label_email">メールアドレス</span><span class="contact-badge" data-i18n="contact_required">必須</span>
+        </label>
+        <input id="contact-email" type="email" class="contact-input" autocomplete="email">
+        <p class="contact-error" data-i18n="contact_error_email">正しいメールアドレスをご入力ください。</p>
+      </div>
+
+      <div class="mb-6" data-contact-field="phone">
+        <label for="contact-phone" class="block text-sm mb-2">
+          <span data-i18n="contact_label_phone">電話番号</span><span class="contact-badge" data-i18n="contact_required">必須</span>
+        </label>
+        <input id="contact-phone" type="tel" class="contact-input" autocomplete="tel">
+        <p class="contact-error" data-i18n="contact_error_phone">電話番号をご入力ください。</p>
+      </div>
+
+      <div class="mb-2" data-contact-field="message">
+        <label for="contact-message" class="block text-sm mb-2">
+          <span data-i18n="contact_label_message">お問い合わせ内容</span><span class="contact-badge" data-i18n="contact_required">必須</span>
+        </label>
+        <textarea id="contact-message" class="contact-input contact-textarea"></textarea>
+        <p class="contact-error" data-i18n="contact_error_message">お問い合わせ内容をご入力ください。</p>
+      </div>
+
+      <button type="submit" id="contact-submit" class="btn-primary w-full justify-center mt-8" data-i18n="contact_submit">送信する</button>
+
+      <p class="text-xs text-center mt-4 hidden" style="color:#B3453D" id="contact-fail" data-i18n="contact_fail"></p>
+    </form>
+
+    <div id="contact-done" class="hidden text-center py-6">
+      <p class="text-sm leading-loose" data-i18n-html="contact_done_html">お問い合わせありがとうございます。<br>内容を確認のうえ、担当者よりご連絡いたします。</p>
+    </div>
+  </div>
+
+  <p class="text-xs text-black/40 mt-6 text-center" id="contact-alt"></p>
 </section>
 
 <!-- ============================================================
@@ -868,6 +943,18 @@ window.I18N = {
     contact_heading: "ご不明な点はお気軽に",
     contact_body: "ご予約前のご質問やご相談は、下記フォームまたはお電話・メールにてお気軽にお問い合わせください。",
     contact_cta: "お問い合わせフォーム",
+    contact_label_name: "お名前",
+    contact_label_email: "メールアドレス",
+    contact_label_phone: "電話番号",
+    contact_label_message: "お問い合わせ内容",
+    contact_required: "必須",
+    contact_error_name: "お名前をご入力ください。",
+    contact_error_email: "正しいメールアドレスをご入力ください。",
+    contact_error_phone: "電話番号をご入力ください。",
+    contact_error_message: "お問い合わせ内容をご入力ください。",
+    contact_submit: "送信する",
+    contact_fail: "送信に失敗しました。お手数ですが、お電話・メールにてお問い合わせください。",
+    contact_done_html: "お問い合わせありがとうございます。<br>内容を確認のうえ、担当者よりご連絡いたします。",
     footer_privacy: "プライバシーポリシー",
     footer_terms: "利用規約",
     footer_cancel: "キャンセルポリシー",
@@ -981,6 +1068,18 @@ window.I18N = {
     contact_heading: "Have a question?",
     contact_body: "Feel free to reach out before booking with any questions via the form below, or by phone or email.",
     contact_cta: "Contact Form",
+    contact_label_name: "Name",
+    contact_label_email: "Email",
+    contact_label_phone: "Phone Number",
+    contact_label_message: "Message",
+    contact_required: "Required",
+    contact_error_name: "Please enter your name.",
+    contact_error_email: "Please enter a valid email address.",
+    contact_error_phone: "Please enter your phone number.",
+    contact_error_message: "Please enter your message.",
+    contact_submit: "Submit",
+    contact_fail: "Something went wrong. Please contact us by phone or email.",
+    contact_done_html: "Thank you for reaching out.<br>We will review your message and get back to you shortly.",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Use",
     footer_cancel: "Cancellation Policy",
@@ -1256,16 +1355,8 @@ window.I18N = {
       igSection.style.display = 'none';
     }
 
-    // contact form (Formrun等) — フォームURL未設定の間はボタンを非表示にし、電話・メールのみ案内する
-    const contactCta = document.getElementById('contact-form-cta');
+    // contact form (Googleフォーム連携) — 電話・メールのフォールバック表示のみここで更新
     const contactAlt = document.getElementById('contact-alt');
-    const contactReady = S.CONTACT_FORM_URL && S.CONTACT_FORM_URL !== 'TODO_CONTACT_FORM_URL';
-    if(contactReady){
-      contactCta.textContent = T.contact_cta;
-      contactCta.style.display = '';
-    } else {
-      contactCta.style.display = 'none';
-    }
     contactAlt.textContent = lang === 'en'
       ? `TEL: ${S.phoneIntl} / MAIL: ${S.email}`
       : `TEL：${S.phone} / MAIL：${S.email}`;
@@ -1426,11 +1517,64 @@ window.I18N = {
       if(S.instagramUrl){ window.open(S.instagramUrl, '_blank', 'noopener'); }
     });
   });
-  document.getElementById('contact-form-cta').addEventListener('click', ()=>{
-    if(S.CONTACT_FORM_URL && S.CONTACT_FORM_URL !== 'TODO_CONTACT_FORM_URL'){
-      window.open(S.CONTACT_FORM_URL, '_blank', 'noopener');
+  // ---- contact form: Googleフォームへno-cors送信し、成功時にオリジナルの完了メッセージを表示 ----
+  (function(){
+    const form = document.getElementById('contact-form');
+    if(!form) return;
+    const doneEl = document.getElementById('contact-done');
+    const failEl = document.getElementById('contact-fail');
+    const submitBtn = document.getElementById('contact-submit');
+    const fieldEls = {
+      name: document.getElementById('contact-name'),
+      email: document.getElementById('contact-email'),
+      phone: document.getElementById('contact-phone'),
+      message: document.getElementById('contact-message')
+    };
+
+    function setInvalid(key, invalid){
+      const wrap = form.querySelector('[data-contact-field="' + key + '"]');
+      if(wrap) wrap.classList.toggle('is-invalid', invalid);
     }
-  });
+    function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+    function validate(){
+      let valid = true;
+      if(!fieldEls.name.value.trim()){ setInvalid('name', true); valid = false; } else setInvalid('name', false);
+      if(!isValidEmail(fieldEls.email.value.trim())){ setInvalid('email', true); valid = false; } else setInvalid('email', false);
+      if(!fieldEls.phone.value.trim()){ setInvalid('phone', true); valid = false; } else setInvalid('phone', false);
+      if(!fieldEls.message.value.trim()){ setInvalid('message', true); valid = false; } else setInvalid('message', false);
+      return valid;
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      failEl.classList.add('hidden');
+      if(!validate()) return;
+
+      const ids = S.CONTACT_FORM_ENTRY_IDS;
+      const data = new FormData();
+      data.append(ids.name, fieldEls.name.value.trim());
+      data.append(ids.email, fieldEls.email.value.trim());
+      data.append(ids.phone, fieldEls.phone.value.trim());
+      data.append(ids.message, fieldEls.message.value.trim());
+
+      submitBtn.disabled = true;
+      const T = I18N[lang];
+      const originalLabel = submitBtn.textContent;
+
+      fetch(S.CONTACT_FORM_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function(){
+          // no-corsのためレスポンス内容は確認できないが、通信エラーがなければ成功として扱う
+          form.classList.add('hidden');
+          doneEl.classList.remove('hidden');
+        })
+        .catch(function(){
+          failEl.classList.remove('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        });
+    });
+  })();
 
   // ---- header scroll state ----
   const header = document.getElementById('site-header');
