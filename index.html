@@ -116,6 +116,11 @@
       "@type": "Question",
       "name": "支払い方法を教えてください。",
       "acceptedAnswer": { "@type": "Answer", "text": "宿泊料金は、ご予約時にクレジットカードで即時決済されます。カードの引き落とし時期については、ご契約のカード会社へお問い合わせください。現地で追加料金が発生する場合は、現金またはPayPayでお支払いいただけます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "法人・業者としての利用はできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、法人のお客様にもご利用いただけます。出張や研修、工事・造船関連のお仕事などで、下請け業者様の宿泊先としてもご利用いただいています。一棟貸切でのご契約もご相談可能です。詳しくはお問い合わせください。" }
     }
   ]
 }
@@ -653,9 +658,9 @@
 <section id="longstay" class="max-w-4xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
   <p class="eyebrow mb-4 justify-center"><span class="lemon-mark"></span>Long Stay</p>
   <h2 class="font-display italic text-3xl md:text-5xl mb-6" data-i18n="longstay_title">長期滞在割</h2>
-  <p class="text-[15px] max-w-xl mx-auto mb-10 about-lead" data-i18n="longstay_body">生口島・瀬戸田で数日〜長期滞在をお考えの方へ。ワーケーションや島暮らし体験、しまなみ海道をゆっくり巡る滞在など、長期でご利用の場合は通常料金よりお得な長期滞在割をご用意しています。</p>
+  <p class="text-[15px] max-w-xl mx-auto mb-10 about-lead" data-i18n="longstay_body">生口島・瀬戸田で数日〜1ヶ月以上の長期滞在をお考えの方へ。ワーケーションや島暮らし体験、しまなみ海道をゆっくり巡る滞在など、長期でご利用の場合は通常料金よりお得な長期滞在割をご用意しています。</p>
 
-  <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-8">
+  <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
     <div class="card p-8">
       <p class="text-sm text-black/50 tracking-wide" data-i18n="longstay_plan1_title">3泊以上</p>
       <p class="text-xl font-display mt-2" data-i18n="longstay_plan1_price">お問い合わせください</p>
@@ -664,9 +669,25 @@
       <p class="text-sm text-black/50 tracking-wide" data-i18n="longstay_plan2_title">7泊以上</p>
       <p class="text-xl font-display mt-2" data-i18n="longstay_plan2_price">お問い合わせください</p>
     </div>
+    <div class="card p-8">
+      <p class="text-sm text-black/50 tracking-wide" data-i18n="longstay_plan3_title">1ヶ月以上</p>
+      <p class="text-xl font-display mt-2" data-i18n="longstay_plan3_price">お問い合わせください</p>
+    </div>
   </div>
   <p class="text-xs note-lead mb-8" data-i18n="longstay_note">※長期滞在割あり。詳細はお問い合わせください。</p>
   <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-medium tracking-wide" style="border:1.5px solid var(--ink)" data-i18n="longstay_cta">お問い合わせはこちら</a>
+</section>
+
+<!-- ============================================================
+     CORPORATE / BUSINESS PLAN
+============================================================= -->
+<section id="corporate" class="py-20 md:py-28" style="background:var(--paper-warm)">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 text-center">
+    <p class="eyebrow mb-4 justify-center"><span class="lemon-mark"></span>Corporate</p>
+    <h2 class="font-display italic text-3xl md:text-5xl mb-6" data-i18n="corporate_title">法人様向けプラン</h2>
+    <p class="text-[15px] max-w-xl mx-auto mb-8 about-lead" data-i18n="corporate_body">出張・研修・工事や造船関連のお仕事などで、複数名でまとめて宿泊されたい法人のお客様も歓迎しています。下請け業者様の宿泊先としてもご利用いただけます。一棟貸切でのご契約もご相談可能です。詳しくはお問い合わせください。</p>
+    <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-medium tracking-wide" style="border:1.5px solid var(--ink)" data-i18n="corporate_cta">法人のお問い合わせはこちら</a>
+  </div>
 </section>
 
 <!-- ============================================================
@@ -1077,11 +1098,15 @@ window.I18N = {
     plan_whole_title: "一棟貸切", plan_whole_sub: "最大10名宿泊",
     plan_child_note: "小学生から宿泊料金がかかります。小学生未満のお子様は無料です。",
     longstay_title: "長期滞在割",
-    longstay_body: "生口島・瀬戸田で数日〜長期滞在をお考えの方へ。ワーケーションや島暮らし体験、しまなみ海道をゆっくり巡る滞在など、長期でご利用の場合は通常料金よりお得な長期滞在割をご用意しています。",
+    longstay_body: "生口島・瀬戸田で数日〜1ヶ月以上の長期滞在をお考えの方へ。ワーケーションや島暮らし体験、しまなみ海道をゆっくり巡る滞在など、長期でご利用の場合は通常料金よりお得な長期滞在割をご用意しています。",
     longstay_plan1_title: "3泊以上", longstay_plan1_price: "お問い合わせください",
     longstay_plan2_title: "7泊以上", longstay_plan2_price: "お問い合わせください",
+    longstay_plan3_title: "1ヶ月以上", longstay_plan3_price: "お問い合わせください",
     longstay_note: "※長期滞在割あり。詳細はお問い合わせください。",
     longstay_cta: "お問い合わせはこちら",
+    corporate_title: "法人様向けプラン",
+    corporate_body: "出張・研修・工事や造船関連のお仕事などで、複数名でまとめて宿泊されたい法人のお客様も歓迎しています。下請け業者様の宿泊先としてもご利用いただけます。一棟貸切でのご契約もご相談可能です。詳しくはお問い合わせください。",
+    corporate_cta: "法人のお問い合わせはこちら",
     setoda_link: '→ <a href="#price" class="underline">panipaniの宿泊プランを見る</a>',
     access_intro_link: 'panipaniの客室・料金は<a href="#stay" class="underline">宿泊ページ</a>をご覧ください。',
     who_title: "こんな旅に、panipani。",
@@ -1135,6 +1160,7 @@ window.I18N = {
         ["一棟貸切はできますか？", "可能です。ご希望の場合は、直接お問い合わせください。"],
         ["生口島で安く泊まれる宿はありますか？", "ゲストハウス panipani 生口島では、一泊2,500円〜で宿泊できます。生口島・瀬戸田でできるだけ費用を抑えて宿泊したい方にもおすすめです。"],
         ["瀬戸田で安く泊まれる宿はありますか？", "瀬戸田にあるゲストハウス panipaniでは、ドミトリータイプの宿泊を一泊2,500円〜ご利用いただけます。"],
+        ["法人・業者としての利用はできますか？", "はい、法人のお客様にもご利用いただけます。出張や研修、工事・造船関連のお仕事などで、下請け業者様の宿泊先としてもご利用いただいています。一棟貸切でのご契約もご相談可能です。詳しくはお問い合わせください。"],
       ]},
       { title: "宿泊について", items: [
         ["チェックインは何時からですか？", null, "checkin"],
@@ -1222,11 +1248,15 @@ window.I18N = {
     plan_whole_title: "Whole-house Rental", plan_whole_sub: "Up to 10 guests",
     plan_child_note: "Elementary school age and up is charged the regular rate. Children under elementary school age stay free.",
     longstay_title: "Long Stay Discount",
-    longstay_body: "Thinking of staying a few days or longer on Ikuchijima, in Setoda? Whether it is a workation, a taste of island life, or a slower loop around the Shimanami Kaido, longer stays get a discount off our regular rates.",
+    longstay_body: "Thinking of staying a few days to a month or longer on Ikuchijima, in Setoda? Whether it is a workation, a taste of island life, or a slower loop around the Shimanami Kaido, longer stays get a discount off our regular rates.",
     longstay_plan1_title: "3+ nights", longstay_plan1_price: "Contact us",
     longstay_plan2_title: "7+ nights", longstay_plan2_price: "Contact us",
+    longstay_plan3_title: "1+ month", longstay_plan3_price: "Contact us",
     longstay_note: "*A long-stay discount is available \u2014 please contact us for details.",
     longstay_cta: "Contact Us",
+    corporate_title: "Corporate & Business Plan",
+    corporate_body: "We also welcome corporate guests \u2014 business trips, training, construction or shipbuilding-related work, and groups staying together. panipani works well as lodging for subcontractor teams too. A whole-house rental contract can also be arranged. Please contact us for details.",
+    corporate_cta: "Contact Us for Business Use",
     setoda_link: "\u2192 <a href=\"#price\" class=\"underline\">See panipani's room plans</a>",
     access_intro_link: "For rooms and rates, see the <a href=\"#stay\" class=\"underline\">Stay page</a>.",
 
@@ -1281,6 +1311,7 @@ window.I18N = {
         ["Can I book the whole guesthouse exclusively?", "Yes, that's possible. Please contact us directly if you're interested."],
         ["Is there an affordable place to stay on Ikuchijima?", "At Guesthouse panipani Ikuchijima, dorm beds start from ¥2,500 per night — a great option if you'd like to keep costs down on Ikuchijima or in Setoda."],
         ["Is there an affordable place to stay in Setoda?", "Guesthouse panipani in Setoda offers dormitory-style stays from ¥2,500 per night."],
+        ["Can businesses or contractors stay here?", "Yes, we welcome corporate guests. panipani is also used as lodging for business trips, training, and construction or shipbuilding-related work, including subcontractor teams. A whole-house rental contract can also be arranged \u2014 please contact us for details."],
       ]},
       { title: "Stay", items: [
         ["What time is check-in?", null, "checkin"],
