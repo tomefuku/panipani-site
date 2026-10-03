@@ -174,7 +174,7 @@
 
     // 予約システム: Beds24。URLが発行されたらここを書き換えるだけで
     // サイト内すべての「空室を確認する / Check Availability」ボタン(JA/EN共通)に反映されます。
-    BEDS24_BOOKING_URL: "TODO_BEDS24_BOOKING_URL",
+    BEDS24_BOOKING_URL: "https://beds24.com/booking2.php?propid=356983&layout=1",
 
     // お問い合わせフォーム(Formrun等)。URLが発行されたらここを書き換えるだけで
     // ページ下部のお問い合わせボタンに反映されます。
@@ -669,7 +669,7 @@
         <p class="text-sm text-white/70" id="plan-whole-weekend"></p>
       </div>
       <p class="text-xs text-white/50 mt-4 leading-relaxed" data-i18n="plan_child_note">小学生から宿泊料金がかかります。小学生未満のお子様は無料です。</p>
-      <a href="javascript:void(0)" data-book class="btn-primary mt-6" style="background:var(--lemon); color:var(--ink);" data-i18n="cta_book">空室を確認する</a>
+      <a href="#contact" class="btn-primary mt-6" style="background:var(--lemon); color:var(--ink);" data-i18n="cta_contact">お問い合わせ</a>
     </div>
   </div>
 </section>
@@ -1108,6 +1108,7 @@ window.FACILITY_ICONS = {
 window.I18N = {
   ja: {
     cta_book: "空室を確認する",
+    cta_contact: "お問い合わせ",
     hero_eyebrow: "瀬戸田・生口島 — 瀬戸内",
     hero_name: "生口島のゲストハウス panipani",
     hero_sub: "瀬戸田で、島時間を。",
@@ -1268,6 +1269,7 @@ window.I18N = {
   },
   en: {
     cta_book: "Check Availability",
+    cta_contact: "Contact Us",
     hero_eyebrow: "Setoda, Ikuchijima — Setouchi",
     hero_name: "Guesthouse panipani, Ikuchijima",
     hero_sub: "Feel the island time.",
