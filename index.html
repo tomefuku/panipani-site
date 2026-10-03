@@ -143,6 +143,10 @@
 
 <!-- Tailwind (utility layer only; identity comes from the custom CSS below) -->
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Beds24 availability-calendar widget requires jQuery + jQueryUI -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<script src='https://media.xmlcal.com/widget/1.01/js/bookWidget.min.js'></script>
 
 <script>
   /* ============================================================
@@ -175,6 +179,7 @@
     // 予約システム: Beds24。URLが発行されたらここを書き換えるだけで
     // サイト内すべての「空室を確認する / Check Availability」ボタン(JA/EN共通)に反映されます。
     BEDS24_BOOKING_URL: "https://beds24.com/booking2.php?propid=356983&layout=1",
+    BEDS24_IFRAME_URL: "https://beds24.com/booking2.php?propid=356983&referer=iFrame",
 
     // お問い合わせフォーム(Formrun等)。URLが発行されたらここを書き換えるだけで
     // ページ下部のお問い合わせボタンに反映されます。
@@ -963,11 +968,14 @@
      RESERVATION BANNER
 ============================================================= -->
 <section id="reservation" class="max-w-6xl mx-auto px-5 md:px-8 pb-20 md:pb-28">
-  <div class="rounded-3xl p-10 md:p-16 text-center" style="background:var(--ink); color:var(--paper)">
+  <div class="rounded-3xl p-6 md:p-12 text-center" style="background:var(--ink); color:var(--paper)">
     <p class="font-jp-display text-xl md:text-2xl mb-2" data-i18n="reservation_kicker">瀬戸田で、島時間を。</p>
-    <h2 class="font-display italic text-3xl md:text-5xl mb-8">Book your stay at panipani</h2>
-    <a href="javascript:void(0)" data-book class="btn-primary" style="background:var(--lemon); color:var(--ink)" data-i18n="cta_book">空室を確認する</a>
-    <p class="text-sm text-white/70 mt-5" data-i18n="reservation_body">ご予約は公式サイトから、予約システム「Beds24」へ直接つながります。</p>
+    <h2 class="font-display italic text-3xl md:text-5xl mb-4">Book your stay at panipani</h2>
+    <p class="text-sm text-white/70 mb-6" data-i18n="reservation_body">下記のカレンダーからそのまま空室確認・ご予約いただけます。</p>
+    <div class="rounded-2xl overflow-hidden p-3 md:p-5" style="background:#fff">
+      <div id='bookWidget-178098-356983-0-1790995043'></div>
+    </div>
+    <a href="javascript:void(0)" data-book-newtab class="text-xs text-white/50 underline mt-4 inline-block" data-i18n="reservation_fallback">カレンダーが表示されない場合はこちら</a>
   </div>
 </section>
 
@@ -1184,7 +1192,8 @@ window.I18N = {
     news_body: "現在、お知らせはございません。料金改定や瀬戸田の季節情報などは、随時こちらでお知らせいたします。",
     faq_title: "よくある質問",
     reservation_kicker: "瀬戸田で、島時間を。",
-    reservation_body: "ご予約は公式サイトから、予約システム「Beds24」へ直接つながります。",
+    reservation_body: "下記のカレンダーからそのまま空室確認・ご予約いただけます。",
+    reservation_fallback: "カレンダーが表示されない場合はこちら",
     instagram_heading_ready: "panipaniの日常を見る",
     instagram_cta_ready: "@panipani をフォロー",
     contact_title: "お問い合わせ",
@@ -1346,7 +1355,8 @@ window.I18N = {
     news_body: "There's no news at the moment. Rate updates and seasonal Setoda information will be posted here.",
     faq_title: "Frequently Asked Questions",
     reservation_kicker: "Stay slow. Feel Setouchi.",
-    reservation_body: "Booking here connects you directly to our reservation system, Beds24.",
+    reservation_body: "Check availability and book directly with the calendar below.",
+    reservation_fallback: "If the calendar doesn't load, click here",
     instagram_heading_ready: "See daily life at panipani",
     instagram_cta_ready: "Follow @panipani",
     contact_title: "Contact",
@@ -1818,6 +1828,21 @@ window.I18N = {
       window.history.replaceState({}, '', url);
     }
     render();
+    initBeds24Widget(l);
+  }
+
+  // Beds24公式の「空き状況カレンダー」ウィジェット(jQuery製)。言語切り替え時は
+  // 中身を空にしてから言語を変えて再初期化する(bookWidgetに再初期化用APIが無いため)。
+  function initBeds24Widget(l){
+    if(typeof jQuery === 'undefined' || !jQuery.fn || !jQuery.fn.bookWidget) return;
+    const $el = jQuery('#bookWidget-178098-356983-0-1790995043');
+    $el.empty();
+    $el.bookWidget({
+      propid: 356983,
+      formAction: 'https://beds24.com/booking.php',
+      widgetLang: (l === 'en') ? 'en' : 'ja',
+      widgetType: 'AvailabilityCalendar'
+    });
   }
 
   // initial language: URL param > localStorage > 'ja'
@@ -1837,16 +1862,28 @@ window.I18N = {
   });
 
   render();
+  // jQuery/bookWidgetの読み込みに失敗しても(広告ブロッカー等)、後続のボタン処理が
+  // 止まらないよう、存在チェックしてから呼び出す。
+  if(typeof jQuery !== 'undefined'){
+    jQuery(document).ready(function(){ initBeds24Widget(lang); });
+  } else {
+    window.addEventListener('load', function(){
+      if(typeof jQuery !== 'undefined'){ initBeds24Widget(lang); }
+    });
+  }
 
   // ---- booking / instagram click handlers ----
-  const bookingUrlReady = S.BEDS24_BOOKING_URL && S.BEDS24_BOOKING_URL !== 'TODO_BEDS24_BOOKING_URL';
+  // 「空室を確認する」ボタンは、ページ内に埋め込んだBeds24の予約カレンダー(#reservation)まで
+  // スムーズスクロールする。直接Beds24のURLを新しいタブで開くと、埋め込み(iframe)前提の
+  // ウィジェットが正しく動作しないことがあるため、常にページ内の埋め込みカレンダーに誘導する。
   document.querySelectorAll('[data-book]').forEach(el=>{
     el.addEventListener('click', ()=>{
-      if(bookingUrlReady){
-        window.open(S.BEDS24_BOOKING_URL, '_blank', 'noopener');
-      } else {
-        document.getElementById('reservation').scrollIntoView({behavior:'smooth'});
-      }
+      document.getElementById('reservation').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  document.querySelectorAll('[data-book-newtab]').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      if(S.BEDS24_BOOKING_URL){ window.open(S.BEDS24_BOOKING_URL, '_blank', 'noopener'); }
     });
   });
   document.querySelectorAll('[data-instagram]').forEach(el=>{
