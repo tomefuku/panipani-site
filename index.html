@@ -62,8 +62,8 @@
     },
     {
       "@type": "Offer",
-      "name": "一棟貸切",
-      "price": "30000",
+      "name": "一棟貸切(8名様までの1棟料金)",
+      "price": "20000",
       "priceCurrency": "JPY",
       "availability": "https://schema.org/InStock",
       "url": "https://panipani.info/#price"
@@ -110,7 +110,7 @@
     {
       "@type": "Question",
       "name": "一棟貸切はできますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "可能です。ご希望の場合は、直接お問い合わせください。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "可能です。8名様までなら1棟20,000円〜(1名様の料金ではなく、2,500円×8名分の1棟料金です)。9名・10名でのご利用や詳細は、お問い合わせください。" }
     },
     {
       "@type": "Question",
@@ -169,7 +169,7 @@
     // 宿泊プラン: 男女混合ドミトリー / 一棟貸切。平日・金土祝前日で料金が異なります(円)。
     price: {
       dorm: { weekday: 2500, weekend: 3000, capacity: 8 },
-      wholeHouse: { weekday: 30000, weekend: 35000, capacity: 10 }
+      wholeHouse: { weekday: 20000, weekend: 24000, capacity: 10 }
     },
 
     postalCode: "〒722-2411",
@@ -673,12 +673,13 @@
     </div>
     <div class="card p-8" style="background:var(--sea-deep); color:var(--paper); border:none;">
       <p class="text-sm text-white/60 tracking-wide" data-i18n="plan_whole_title">一棟貸切</p>
-      <p class="text-xs text-white/50 mt-1" data-i18n="plan_whole_sub">最大10名宿泊</p>
+      <p class="text-xs text-white/50 mt-1" data-i18n="plan_whole_sub">1棟まるごと・8名様までの料金(最大10名宿泊)</p>
       <div class="mt-5 space-y-1">
         <p class="text-sm text-white/70" id="plan-whole-weekday"></p>
         <p class="text-sm text-white/70" id="plan-whole-weekend"></p>
       </div>
-      <p class="text-xs text-white/50 mt-4 leading-relaxed" data-i18n="plan_child_note">小学生から宿泊料金がかかります。小学生未満のお子様は無料です。</p>
+      <p class="text-xs text-white/70 mt-4 leading-relaxed" data-i18n="plan_whole_note">※1名様の料金ではなく、1棟(8名様まで)の料金です。2,500円×8名で20,000円〜。9名・10名でのご利用はお問い合わせください。</p>
+      <p class="text-xs text-white/50 mt-2 leading-relaxed" data-i18n="plan_child_note">小学生から宿泊料金がかかります。小学生未満のお子様は無料です。</p>
       <a href="#contact" class="btn-primary mt-6" style="background:var(--lemon); color:var(--ink);" data-i18n="cta_contact">お問い合わせ</a>
     </div>
   </div>
@@ -1180,7 +1181,8 @@ window.I18N = {
     price_note: "実際の料金は宿泊日・条件等により変動する場合があります。最新の料金は予約画面でご確認ください。",
     plan_weekday: "平日", plan_weekend: "金・土・祝前日",
     plan_dorm_title: "男女混合ドミトリー", plan_dorm_sub: "2段ベッド・最大8名宿泊",
-    plan_whole_title: "一棟貸切", plan_whole_sub: "最大10名宿泊",
+    plan_whole_title: "一棟貸切", plan_whole_sub: "1棟まるごと・8名様までの料金(最大10名宿泊)",
+    plan_whole_note: "※1名様の料金ではなく、1棟(8名様まで)の料金です。2,500円×8名で20,000円〜。9名・10名でのご利用はお問い合わせください。",
     plan_child_note: "小学生から宿泊料金がかかります。小学生未満のお子様は無料です。",
     longstay_title: "長期滞在割",
     longstay_body: "生口島・瀬戸田で数日〜1ヶ月以上の長期滞在をお考えの方へ。ワーケーションや島暮らし体験、しまなみ海道をゆっくり巡る滞在など、長期でご利用の場合は通常料金よりお得な長期滞在割をご用意しています。",
@@ -1255,7 +1257,7 @@ window.I18N = {
         ["キャンセルはできますか？", null, "cancellation"],
         ["予約の変更はできますか？", "基本的には、ご予約いただいたサイト上で日程の変更をお願いしております。予約サイト上で変更ができない場合は、お問い合わせフォームよりご連絡ください。"],
         ["当日予約はできますか？", "清掃やベッドメイキングの準備がございますため、2日前までのご予約をお願いしております。"],
-        ["一棟貸切はできますか？", "可能です。ご希望の場合は、直接お問い合わせください。"],
+        ["一棟貸切はできますか？", "可能です。8名様までなら1棟20,000円〜(1名様の料金ではなく、2,500円×8名分の1棟料金です)。9名・10名でのご利用や詳細は、お問い合わせください。"],
         ["生口島で安く泊まれる宿はありますか？", "ゲストハウス panipani 生口島では、一泊2,500円〜で宿泊できます。生口島・瀬戸田でできるだけ費用を抑えて宿泊したい方にもおすすめです。"],
         ["瀬戸田で安く泊まれる宿はありますか？", "瀬戸田にあるゲストハウス panipaniでは、ドミトリータイプの宿泊を一泊2,500円〜ご利用いただけます。"],
         ["生口島で安いゲストハウス・宿を探しています。どんな宿ですか？", "ゲストハウス panipani 生口島は、寝る場所に必要なものだけをシンプルに用意した、一泊2,500円〜のドミトリー形式の宿です。豪華な朝食や高級アメニティを省くことで、宿泊料金をできるだけ抑えています。しまなみ海道のサイクリング、釣り、一人旅、出張などの宿泊先として、生口島で安く泊まりたい方にご利用いただいています。"],
@@ -1351,7 +1353,8 @@ window.I18N = {
     price_note: "Actual rates may vary by date and conditions. Please check the booking screen for the current price.",
     plan_weekday: "Weekdays", plan_weekend: "Fri / Sat / day before a holiday",
     plan_dorm_title: "Mixed-gender Dormitory", plan_dorm_sub: "Bunk beds, up to 8 guests",
-    plan_whole_title: "Whole-house Rental", plan_whole_sub: "Up to 10 guests",
+    plan_whole_title: "Whole-house Rental", plan_whole_sub: "Entire house \u00b7 rate for up to 8 guests (sleeps up to 10)",
+    plan_whole_note: "* This is the price for the whole house (up to 8 guests), not per person \u2014 \u00a52,500 \u00d7 8 guests = from \u00a520,000. For 9 or 10 guests, please contact us.",
     plan_child_note: "Elementary school age and up is charged the regular rate. Children under elementary school age stay free.",
     longstay_title: "Long Stay Discount",
     longstay_body: "Thinking of staying a few days to a month or longer on Ikuchijima, in Setoda? Whether it is a workation, a taste of island life, or a slower loop around the Shimanami Kaido, longer stays get a discount off our regular rates.",
@@ -1427,7 +1430,7 @@ window.I18N = {
         ["Can I cancel my reservation?", null, "cancellation"],
         ["Can I change my reservation?", "Please make date changes through the site where you originally booked. If you are unable to change it there, please contact us via our inquiry form."],
         ["Can I book for today?", "Since we need time for cleaning and bed-making, we ask that you book at least 2 days in advance."],
-        ["Can I book the whole guesthouse exclusively?", "Yes, that's possible. Please contact us directly if you're interested."],
+        ["Can I book the whole guesthouse exclusively?", "Yes. For up to 8 guests the whole house starts from \u00a520,000 \u2014 that's the price for the entire house (\u00a52,500 \u00d7 8 guests), not per person. For 9 or 10 guests or more details, please contact us."],
         ["Is there an affordable place to stay on Ikuchijima?", "At Guesthouse panipani Ikuchijima, dorm beds start from ¥2,500 per night — a great option if you'd like to keep costs down on Ikuchijima or in Setoda."],
         ["Is there an affordable place to stay in Setoda?", "Guesthouse panipani in Setoda offers dormitory-style stays from ¥2,500 per night."],
         ["I'm looking for a cheap guesthouse on Ikuchijima. What is panipani like?", "Guesthouse panipani is a simple dormitory-style stay in Setoda from \u00a52,500 a night. We skip the lavish breakfast and high-end amenities and provide just what you need for a good night's sleep, so we can keep the rate as low as possible. It suits cyclists on the Shimanami Kaido, anglers, solo travelers, and business trips."],
@@ -1758,8 +1761,8 @@ window.I18N = {
     const cxl = S.cancellation;
     const dynamicAnswers = {
       price: lang === 'en'
-        ? `Dormitory: from ¥${S.price.dorm.weekday.toLocaleString()} on weekdays (from ¥${S.price.dorm.weekend.toLocaleString()} Fri/Sat/day before a holiday). Whole-house rental: from ¥${S.price.wholeHouse.weekday.toLocaleString()} on weekdays (from ¥${S.price.wholeHouse.weekend.toLocaleString()} Fri/Sat/day before a holiday). ${T.price_note}`
-        : `男女混合ドミトリーは平日${S.price.dorm.weekday.toLocaleString()}円〜(金・土・祝前日${S.price.dorm.weekend.toLocaleString()}円〜)、一棟貸切は平日${S.price.wholeHouse.weekday.toLocaleString()}円〜(金・土・祝前日${S.price.wholeHouse.weekend.toLocaleString()}円〜)です。${T.price_note}`,
+        ? `Dormitory: from ¥${S.price.dorm.weekday.toLocaleString()} on weekdays (from ¥${S.price.dorm.weekend.toLocaleString()} Fri/Sat/day before a holiday). Whole-house rental (per house, up to 8 guests): from ¥${S.price.wholeHouse.weekday.toLocaleString()} on weekdays (from ¥${S.price.wholeHouse.weekend.toLocaleString()} Fri/Sat/day before a holiday). ${T.price_note}`
+        : `男女混合ドミトリーは平日${S.price.dorm.weekday.toLocaleString()}円〜(金・土・祝前日${S.price.dorm.weekend.toLocaleString()}円〜)、一棟貸切(8名様まで・1棟あたり)は平日${S.price.wholeHouse.weekday.toLocaleString()}円〜(金・土・祝前日${S.price.wholeHouse.weekend.toLocaleString()}円〜)です。${T.price_note}`,
       payment: lang === 'en'
         ? `Payment is made by credit card at the time of booking (charged immediately). For the exact date your card is billed, please check with your card issuer. If any extra charges arise on-site, you can pay by cash or PayPay.`
         : `宿泊料金は、ご予約時にクレジットカードで即時決済されます。カードの引き落とし時期については、ご契約のカード会社へお問い合わせください。現地で追加料金が発生する場合は、現金またはPayPayでお支払いいただけます。`,
